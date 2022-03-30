@@ -34,6 +34,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
         ],
       ),
       
+
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.symmetric(horizontal: 16),
