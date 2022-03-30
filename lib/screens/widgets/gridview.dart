@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_4/constants/images.dart';
 
-class GridviewClass extends StatelessWidget {
+class GridviewClass extends StatefulWidget {
   const GridviewClass({Key? key}) : super(key: key);
 
-  static const List<String> images = [
+  @override
+  State<GridviewClass> createState() => _GridviewClassState();
+}
+
+class _GridviewClassState extends State<GridviewClass> {
+    List images = [
     Images.rectangle9,
     Images.rectangle10,
     Images.rectangle11,
@@ -15,7 +20,6 @@ class GridviewClass extends StatelessWidget {
     Images.rectangle7,
     Images.rectangle6,
   ];
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -45,7 +49,12 @@ class GridviewClass extends StatelessWidget {
                           borderRadius: BorderRadius.circular(100),
                           border: Border.all(color: Colors.white, width: 1)),
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          images.removeAt(index);
+                          setState(() {
+                            
+                          });
+                        },
                         child: const Icon(
                           Icons.close,
                           size: 13,
@@ -65,7 +74,7 @@ class GridviewClass extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               InkWell(
-                onTap: (){},
+                onTap: () {},
                 child: Container(
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
@@ -79,16 +88,14 @@ class GridviewClass extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(
-                width: 16,
-              ),
               InkWell(
-                onTap: (){},
+                onTap: () {},
                 child: Container(
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                       color: const Color(0xffffffff),
-                      border: Border.all(color: const Color(0xff000000).withOpacity(0.12))),
+                      border: Border.all(
+                          color: const Color(0xff000000).withOpacity(0.12))),
                   height: 36,
                   width: 156,
                   child: const Text(
